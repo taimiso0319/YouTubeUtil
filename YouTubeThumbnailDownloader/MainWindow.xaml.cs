@@ -16,6 +16,8 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Net;
 using System.IO;
+using System.Windows.Automation.Peers;
+using System.Windows.Automation.Provider;
 
 namespace YouTubeThumbnailDownloader
 {
@@ -49,6 +51,8 @@ namespace YouTubeThumbnailDownloader
             m_Path = @"C:\Users\" + System.Environment.UserName + @"\Downloads";
 
             UpdateDirectoryTextBox(m_Path);
+            var provider = new ButtonAutomationPeer(Button_GetInfo) as IInvokeProvider;
+            provider.Invoke();
         }
 
         private void Button_SelectDirectory_Click(object sender, RoutedEventArgs e)

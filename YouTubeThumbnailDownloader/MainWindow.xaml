@@ -11,9 +11,9 @@
         <TextBox x:Name="TextBox_Directory" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" Margin="10,38,0,0" VerticalContentAlignment="Center"/>
         <Button x:Name="Button_SelectDirectory" Content="Select" HorizontalAlignment="Left" Margin="665,38,0,0" VerticalAlignment="Top" Width="117" Height="23" Click="Button_SelectDirectory_Click"/>
         <Button x:Name="Button_GetInfo" Content="Get Info" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="772" Height="23" Click="Button_GetInfo_Click"/>
-        <Image x:Name="Image_Thumbnail" Height="220" Margin="204,138,198,0" VerticalAlignment="Top" Source="maxresdefault (3).jpg" Stretch="Fill"/>
         <Button x:Name="Button_SaveThumbnail" Content="Save Thumbnail" VerticalAlignment="Bottom" Margin="324,0,324,17" Click="Button_SaveThumbnail_Click" VerticalContentAlignment="Center" Height="23"/>
-        <Label x:Name="Label_Title" Content="【HELLTAKER】埼玉から出発！快速特急地獄行き" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,94,4,0" Height="44" Width="778" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Lato Semibold" Background="{x:Null}" Foreground="#FF404B7A" FontSize="20"/>
+        <Label x:Name="Label_Title" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,94,4,0" Height="44" Width="778" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Lato Semibold" Background="{x:Null}" Foreground="#FF404B7A" FontSize="20"/>
+        <Image x:Name="Image_Thumbnail" Height="220" Margin="204,138,198,0" VerticalAlignment="Top" Stretch="Fill"/>
 
     </Grid>
 </Window>
