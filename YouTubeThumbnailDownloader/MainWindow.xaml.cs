@@ -31,6 +31,7 @@ namespace YouTubeThumbnailDownloader
         private static readonly Regex m_URLMatch = new Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)", RegexOptions.IgnoreCase);
         private static readonly string m_URLError = "The URL is not youtube one. maybe.";
         private static readonly Regex m_HTMLTitleMatch = new Regex(@"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>", RegexOptions.IgnoreCase);
+        private static readonly Regex m_FileIlligalsMatch = new Regex(string.Format("[{0}]", Regex.Escape(new string(System.IO.Path.GetInvalidFileNameChars()) + new string(System.IO.Path.GetInvalidPathChars()))));
 
         private static readonly string m_ThumbnailUrlFormat_Def = @"https://img.youtube.com/vi/{0}/default.jpg";
         private static readonly string m_ThumbnailUrlFormat_HQ  = @"https://img.youtube.com/vi/{0}/hqdefault.jpg";
@@ -125,7 +126,8 @@ namespace YouTubeThumbnailDownloader
             using (var webClient = new WebClient())
             {
                 webClient.Encoding = Encoding.UTF8;
-                webClient.DownloadFile(string.Format(m_ThumbnailUrlFormat_MAX, id), m_Path+@"\"+Label_Title.Content+"_"+id+".jpg");
+                var title = m_FileIlligalsMatch.Replace(Label_Title.Content.ToString(), "");
+                webClient.DownloadFile(string.Format(m_ThumbnailUrlFormat_MAX, id), m_Path+@"\"+title+"_"+id+".jpg");
             }
             Button_SaveThumbnail.IsEnabled = false;
         }
