@@ -19,7 +19,7 @@ using System.IO;
 using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
 
-namespace YouTubeThumbnailDownloader
+namespace YouTubeUtil
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
